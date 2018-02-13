@@ -1,0 +1,35 @@
+Server:43495Client: localhost:43495
+writing to buffer56=== TestWindow1: 1 client, max capacity (1 clients, 10 msgs/client, 5 window size, 5 max epochs)
+Client: Putting message to buffer
+Client: Putting message to buffer
+Client: Putting message to buffer
+Client: Putting message to buffer
+Client: Putting message to buffer
+Client: Putting message to buffer
+Client: Putting message to buffer
+Client: Putting message to buffer
+Client: Putting message to buffer
+Client: Putting message to buffer
+127.0.0.1:37556
+Client id created: 1
+Server: Got data from client[Connect 0 0]
+127.0.0.1:37556
+Server: Got data from client[Connect 0 0]
+127.0.0.1:37556
+Server: Got data from client[Connect 0 0]
+127.0.0.1:37556
+Server: Got data from client[Connect 0 0]
+unexpected end of JSON input
+--- FAIL: TestWindow1 (2.51s)
+	lsp2_test.go:83: Started server on port 43495.
+	lsp2_test.go:101: Server write drop percent set to 100%
+	lsp2_test.go:259: Waiting for clients...
+	lsp2_test.go:131: Client 0 streaming 10 messages to the server.
+	lsp2_test.go:146: Client 0 finished streaming 10 messages to the server.
+	lsp2_test.go:272: Done waiting for clients.
+	lsp2_test.go:244: Waiting for server...
+	lsp2_test.go:209: Server reading 10 total messages from clients.
+	lsp2_test.go:248: Test timed out after 2.50 secs
+FAIL
+exit status 1
+FAIL	github.com/cmu440/lsp	2.512s

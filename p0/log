@@ -1,0 +1,138 @@
+========== TestBasic1: 1 client(s), 100 get requests each ==========
+Close called
+--- FAIL: TestBasic1 (0.00s)
+	server_test.go:375: Count returned an incorrect value (returned 1, expected 0)
+========== TestBasic2: 1 client(s), 1500 get requests each ==========
+Warning! Failed to start server on port 5883: %!s(<nil>).
+Close called
+--- FAIL: TestBasic2 (0.05s)
+	server_test.go:375: Count returned an incorrect value (returned 1, expected 0)
+========== TestBasic3: 2 client(s), 20 get requests each ==========
+Warning! Failed to start server on port 5883: %!s(<nil>).
+Warning! Failed to start server on port 9731: %!s(<nil>).
+Close called
+--- FAIL: TestBasic3 (0.10s)
+	server_test.go:375: Count returned an incorrect value (returned 1, expected 0)
+========== TestBasic4: 2 client(s), 1500 get requests each ==========
+Warning! Failed to start server on port 5883: %!s(<nil>).
+Warning! Failed to start server on port 9731: %!s(<nil>).
+Warning! Failed to start server on port 7614: %!s(<nil>).
+Close called
+--- FAIL: TestBasic4 (0.15s)
+	server_test.go:375: Count returned an incorrect value (returned 1, expected 0)
+========== TestBasic5: 5 client(s), 50 get requests each ==========
+Warning! Failed to start server on port 5883: %!s(<nil>).
+Warning! Failed to start server on port 9731: %!s(<nil>).
+Warning! Failed to start server on port 7614: %!s(<nil>).
+Warning! Failed to start server on port 4564: %!s(<nil>).
+Close called
+--- FAIL: TestBasic5 (0.20s)
+	server_test.go:375: Count returned an incorrect value (returned 1, expected 0)
+========== TestBasic6: 10 client(s), 1500 get requests each ==========
+Warning! Failed to start server on port 5883: %!s(<nil>).
+Warning! Failed to start server on port 9731: %!s(<nil>).
+Warning! Failed to start server on port 7614: %!s(<nil>).
+Warning! Failed to start server on port 4564: %!s(<nil>).
+Warning! Failed to start server on port 9524: %!s(<nil>).
+Close called
+--- FAIL: TestBasic6 (0.25s)
+	server_test.go:381: Failed to start clients: dial tcp :0: getsockopt: connection refused
+========== TestCount1: 3 rounds, up to 20 clients started/killed per round ==========
+Warning! Failed to start server on port 5883: %!s(<nil>).
+Warning! Failed to start server on port 9731: %!s(<nil>).
+Warning! Failed to start server on port 7614: %!s(<nil>).
+Warning! Failed to start server on port 4564: %!s(<nil>).
+Warning! Failed to start server on port 9524: %!s(<nil>).
+Round 1: starting 20, killing 0
+Close called
+--- FAIL: TestCount1 (0.75s)
+	server_test.go:461: Failed to start clients: dial tcp :0: getsockopt: connection refused
+========== TestCount2: 7 rounds, up to 50 clients started/killed per round ==========
+Close called
+--- FAIL: TestCount2 (0.50s)
+	server_test.go:448: Count returned an incorrect value (returned 1, expected 0)
+========== TestSlowClient1: 2 total clients, 1 slow client(s), 2000 get requests each ==========
+All clients beginning to write...
+Normal clients beginning to read...
+Received: put,key_slow_0_83,value_0&&
+Received: put,key_slow_0_199,value_0&&
+Received: put,key_slow_0_124,value_0&&
+Received: put,key_slow_0_17,value_0&&
+[]Received: get,key_slow_0_135&&
+[]Received: get,key_slow_0_171&&
+[]Received: get,key_slow_0_189&&
+Received: put,key_slow_0_185,value_0&&
+[]Received: get,key_slow_0_50&&
+[]Received: get,key_slow_0_45&&
+[]Received: get,key_slow_0_153&&
+[]Received: get,key_slow_0_27&&
+[]Received: get,key_slow_0_86&&
+[]Received: get,key_slow_0_12&&
+[]Received: get,key_slow_0_26&&
+[]Received: get,key_slow_0_32&&
+[]Received: get,key_slow_0_34&&
+[]Received: get,key_slow_0_133&&
+[]Received: get,key_slow_0_110&&
+[]Received: get,key_slow_0_157&&
+[]Received: get,key_slow_0_172&&
+[]Received: get,key_slow_0_191&&
+[]Received: get,key_slow_0_109&&
+[]Received: get,key_slow_0_37&&
+[]Received: get,key_slow_0_53&&
+[]Received: get,key_slow_0_77&&
+Slow clients beginning to read...
+Close called
+--- FAIL: TestSlowClient1 (10.50s)
+	server_test.go:430: non-slow clients received 0 messages, expected 2000
+========== TestSlowClient2: 6 total clients, 4 slow client(s), 2000 get requests each ==========
+Closing Connection in handleConenction
+1
+All clients beginning to write...
+Normal clients beginning to read...
+Received: put,key_slow_0_139,value_0&&
+Received: put,key_slow_0_21,value_0&&
+Received: put,key_slow_0_4,value_0&&
+[]Received: get,key_slow_0_159&&
+[]Received: get,key_slow_0_71&&
+[]Received: get,key_slow_0_76&&
+[]Received: get,key_slow_0_8&&
+[]Received: get,key_slow_0_163&&
+[]Received: get,key_slow_0_41&&
+[]Received: get,key_slow_0_17&&
+[]Received: get,key_slow_0_10&&
+[]Received: get,key_slow_0_179&&
+[]Received: get,key_slow_0_81&&
+Received: put,key_slow_0_144,value_0&&
+[]Received: get,key_slow_0_16&&
+[]Received: get,key_slow_0_0&&
+Received: put,key_slow_0_9,value_0&&
+[]Received: get,key_slow_0_50&&
+[]Received: get,key_slow_0_159&&
+[]Received: get,key_slow_0_83&&
+[]Received: get,key_slow_0_123&&
+[]Received: get,key_slow_0_49&&
+[]Received: get,key_slow_0_170&&
+[]Received: get,key_slow_0_184&&
+[]Received: get,key_slow_0_85&&
+[]Received: get,key_slow_0_116&&
+[]Received: get,key_slow_0_71&&
+[]Received: get,key_slow_0_135&&
+[]Received: get,key_slow_0_38&&
+[]Received: get,key_slow_0_10&&
+[]Received: get,key_slow_0_19&&
+[]Received: get,key_slow_0_5&&
+[]Received: get,key_slow_0_62&&
+[]Received: get,key_slow_0_163&&
+[]Received: get,key_slow_0_95&&
+[]Received: get,key_slow_0_81&&
+[]Received: get,key_slow_0_197&&
+[]Received: get,key_slow_0_81&&
+[]Received: get,key_slow_0_125&&
+[]Received: get,key_slow_0_65&&
+Slow clients beginning to read...
+Close called
+--- FAIL: TestSlowClient2 (12.50s)
+	server_test.go:430: non-slow clients received 0 messages, expected 4000
+FAIL
+exit status 1
+FAIL	_/home/khagesh/go_ws/src/github.com/cmu440/p0	25.022s

@@ -1,0 +1,62 @@
+========== TestBasic1: 1 client(s), 100 get requests each ==========
+All clients beginning to write...
+All clients beginning to read...
+Close called
+--- FAIL: TestBasic1 (5.50s)
+	server_test.go:395: test timed out
+========== TestBasic2: 1 client(s), 1500 get requests each ==========
+Closing Connection in handleConenction
+All clients beginning to write...
+All clients beginning to read...
+Close called
+--- FAIL: TestBasic2 (10.50s)
+	server_test.go:395: test timed out
+========== TestBasic3: 2 client(s), 20 get requests each ==========
+Closing Connection in handleConenction
+Close called
+--- FAIL: TestBasic3 (0.50s)
+	server_test.go:390: Count returned an incorrect value (returned 1, expected 2)
+========== TestBasic4: 2 client(s), 1500 get requests each ==========
+Warning! Failed to start server on port 8891: %!s(<nil>).
+Close called
+--- FAIL: TestBasic4 (0.55s)
+	server_test.go:390: Count returned an incorrect value (returned 1, expected 2)
+========== TestBasic5: 5 client(s), 50 get requests each ==========
+Closing Connection in handleConenction
+Close called
+--- FAIL: TestBasic5 (0.50s)
+	server_test.go:390: Count returned an incorrect value (returned 1, expected 5)
+========== TestBasic6: 10 client(s), 1500 get requests each ==========
+Warning! Failed to start server on port 8972: %!s(<nil>).
+Close called
+--- FAIL: TestBasic6 (0.55s)
+	server_test.go:390: Count returned an incorrect value (returned 1, expected 10)
+========== TestCount1: 3 rounds, up to 20 clients started/killed per round ==========
+Round 1: starting 20, killing 0
+Close called
+--- FAIL: TestCount1 (1.50s)
+	server_test.go:480: Test failed during the event #1: Count returned an incorrect value (returned 1, expected 20)
+========== TestCount2: 7 rounds, up to 50 clients started/killed per round ==========
+Closing Connection in handleConenction
+Round 1: starting 15, killing 0
+Close called
+--- FAIL: TestCount2 (1.50s)
+	server_test.go:480: Test failed during the event #1: Count returned an incorrect value (returned 1, expected 15)
+========== TestSlowClient1: 2 total clients, 1 slow client(s), 2000 get requests each ==========
+All clients beginning to write...
+Normal clients beginning to read...
+Slow clients beginning to read...
+Close called
+--- FAIL: TestSlowClient1 (10.50s)
+	server_test.go:430: non-slow clients received 0 messages, expected 2000
+========== TestSlowClient2: 6 total clients, 4 slow client(s), 2000 get requests each ==========
+Closing Connection in handleConenction
+All clients beginning to write...
+Normal clients beginning to read...
+Slow clients beginning to read...
+Close called
+--- FAIL: TestSlowClient2 (12.50s)
+	server_test.go:430: non-slow clients received 0 messages, expected 4000
+FAIL
+exit status 1
+FAIL	_/home/khagesh/go_ws/src/github.com/cmu440/p0	44.120s
